@@ -63,3 +63,35 @@ Xamarin already has a fairly robust integration to the mono soft debugger in the
 definitely fork over the cash if they'd generalize that to work with regular Linux Mono (hint hint  :-)  ).
 
 Please let us know if you find a better debugging option.
+
+Dependencies
+------------
+
+BlackNet depends on:
+* JSON.Net - only for one small bit of logging code which could easily be changed.
+
+BlackNet.Test depends on:
+* Moq
+* NUnit - added packages include VS testing integration so you don't have to install NUnit.
+
+Logging
+-------
+
+There are no direct dependencies on a logging frameworks.  Instead, hook the Logging.LogError and/or 
+Logging.LogTrace events and log through your favorite framework, or simply dump log entries to the console.
+
+Usage Examples
+--------------
+
+Interacting with a Pulse Width Modulation device:
+
+        var device = new Pwm(P9_14);
+        device.DutyPercent = 35;
+        device.Run = true;
+
+Interacting with a GPIO:    
+
+        var device = new Gpio(P8_12);
+        device.Direction = BbbDirection.Out;
+        device.IsHigh = true;
+

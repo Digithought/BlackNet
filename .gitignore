@@ -1,0 +1,10 @@
+/BlackNet/bin
+/BlackNet/obj
+/*.suo
+/BlackNet.Test/bin
+/BlackNet.Test/obj
+/BlackNet.InteractiveTests/bin
+/BlackNet.InteractiveTests/obj
+/packages
+/ConsoleUi/bin
+/ConsoleUi/obj

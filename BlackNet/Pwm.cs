@@ -22,6 +22,7 @@ namespace Digithought.BlackNet
 			};
 		private const string PwmSlotName = "am33xx_pwm";
 		private const string PwmPrefix = "bone_pwm_";
+		private const int SlotConfigurationDelayTime = 300;	// Time to wait before attempting use after configuration
 
 
 		private string devicePath;
@@ -59,6 +60,9 @@ namespace Digithought.BlackNet
 			{
 				WriteToSlots(PwmSlotName);
 				WriteToSlots(GetSlotName());
+
+				// Wait briefly for the configuration to take, else an error will occur on first use
+				System.Threading.Thread.Sleep(SlotConfigurationDelayTime);
 			}
 		}
 

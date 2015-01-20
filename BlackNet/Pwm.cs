@@ -141,11 +141,11 @@ namespace Digithought.BlackNet
 		{
 			get
 			{
-				return !ParseBool(ReadFromFile(PolarityFileName()));
+				return ParseBool(ReadFromFile(PolarityFileName()));
 			}
 			set
 			{
-				WriteToFile(PolarityFileName(), value ? "0" : "1");
+				WriteToFile(PolarityFileName(), value ? "1" : "0");
 			}
 		}
 

@@ -38,7 +38,7 @@ Update your package list:
 
     sudo apt-get update
   
-Now download [his package](https://s3-eu-west-1.amazonaws.com/westgatecyber/mono-3.8.0-branch-armhf-e451fb2.deb) then install it like this:
+Now download [this package](https://s3-eu-west-1.amazonaws.com/westgatecyber/mono-3.8.0-branch-armhf-e451fb2.deb) then install it like this:
 
     sudo dpkg -i mono*.deb
   
@@ -49,6 +49,7 @@ Compiling And Running
 
 There are various options for compiling and running on Mono on the BBB.  
 * If you are using HDMI or VNC you can install MonoDevelop on the BeagleBone Black and use it as per normal.  
+* Supposedly Monodevelop (Xamarin) has remote debugging capabilities, but I've yet to get it to work. Instructions are [here](http://www.ofitselfso.com/Beagle/RemoteMonoDebuggingOnTheBeagleBoneBlack.php).
 * What I've been trying to get working is remote debugging from Visual Studio.  The Mono soft debugger appears to be rather mature, as it's used by Unity 
 and Xamarin, and I think even when debugging locally by the MonoDevelop environment, but integration with
 Visual Studio is the main issue.  
@@ -58,9 +59,6 @@ which automatically packages up the build output, copies it to the Linux target,
 starts the soft debugger, but unfortunately the present state of the VS debugger integration is so limited as
 to be nearly useless.  So far I've found it to only work for a single thread and to inspect local variables.  
 I wish I had more time to give to help that project along because it would be so useful if it worked well.
-
-Xamarin already has a fairly robust integration to the mono soft debugger in their commercial VS plugin, I'd
-definitely fork over the cash if they'd generalize that to work with regular Linux Mono (hint hint  :-)  ).
 
 Please let us know if you find a better debugging option.
 

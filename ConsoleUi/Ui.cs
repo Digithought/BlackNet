@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -60,12 +59,12 @@ namespace Digithought.ConsoleUi
 						Console.WriteLine(p.Name + ": ");
 						var value = Console.ReadLine();
 						Console.WriteLine();
-						return JsonConvert.DeserializeObject(value, p.ParameterType);
+						return Newtonsoft.Json.JsonConvert.DeserializeObject(value, p.ParameterType);
 					}
 					).ToArray()
 				);
 
-				Console.WriteLine("Result: " + JsonConvert.SerializeObject(result));
+				Console.WriteLine("Result: " + Newtonsoft.Json.JsonConvert.SerializeObject(result));
 			}
 			catch (TargetInvocationException e)
 			{
